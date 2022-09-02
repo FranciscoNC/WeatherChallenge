@@ -27,3 +27,5 @@ python3 manage.py create_locations
 ```
 ## Resources
 https://www.weatherapi.com/
+
+https://docs.djangoproject.com/en/4.1/intro/tutorial01/
