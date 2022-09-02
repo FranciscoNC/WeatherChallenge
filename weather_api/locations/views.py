@@ -32,10 +32,24 @@ class CityViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['get'])
     def weather(self, request):
-        data = {}
+        all_cities = City.objects.all()
+        data = []
+        for city in all_cities:
+            data.append({
+                "name": city.name,
+                "state": city.state.name,
+                "country": city.state.country.name
+                # TODO: add weather data
+            })
         return Response(data)
 
     @action(detail=True, methods=['get'])
     def forecast(self, request,  pk=None):
-        data = {}
+        city = City.objects.get(id=pk)
+        data = {
+            "name": city.name,
+            "state": city.state.name,
+            "country": city.state.country.name
+            # TODO: add forecast data
+        }
         return Response(data)
