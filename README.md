@@ -17,6 +17,10 @@ You have to return information at:
 ```
 pip install -r requirements.txt
 ```
+## Run server
+```
+python3 manage.py runserver
+```
 ## Migrate
 ```
 python3 manage.py migrate
