@@ -33,11 +33,9 @@ class CityViewSet(viewsets.ModelViewSet):
     @action(detail=False, methods=['get'])
     def weather(self, request):
         data = {}
-        self.get_queryset()
         return Response(data)
 
     @action(detail=True, methods=['get'])
     def forecast(self, request,  pk=None):
         data = {}
-        self.get_object()
         return Response(data)
